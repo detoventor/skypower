@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyPower Minecraft Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Minecraft&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+    /* From Uiverse.io by kennyotsu */ 
+.headerr {
+  /* color used to softly clip top and bottom of the .words container */
+  --bg-color: #212121;
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  border-radius: 1.25rem;
+}
+.loader {
+  color: rgb(124, 124, 124);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+}
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    var(--bg-color) 10%,
+    transparent 30%,
+    transparent 70%,
+    var(--bg-color) 90%
+  );
+  z-index: 20;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #956afa;
+  animation: spin_4991 4s infinite;
+}
+
+@keyframes spin_4991 {
+  10% {
+    -webkit-transform: translateY(-102%);
+    transform: translateY(-102%);
+  }
+
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  35% {
+    -webkit-transform: translateY(-202%);
+    transform: translateY(-202%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  60% {
+    -webkit-transform: translateY(-302%);
+    transform: translateY(-302%);
+  }
+
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  85% {
+    -webkit-transform: translateY(-402%);
+    transform: translateY(-402%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%);
+  }
+}
+
+      /* From Uiverse.io by TCdesign-dev */ 
+#bottone1 {
+
+ border-radius: 9px;
+ background: #d5f365;
+ border: none;
+ font-family: inherit;
+ text-align: center;
+ cursor: pointer;
+ transition: 0.4s;
+}
+
+#bottone1:hover {
+ box-shadow: 7px 5px 56px -14px #C3D900;
+}
+
+#bottone1:active {
+ transform: scale(0.97);
+ box-shadow: 7px 5px 56px -10px #C3D900;
+}
+      /* From Uiverse.io by musashi-13 */ 
+@keyframes autoRun3d {
+  from {
+    transform: perspective(800px) rotateY(-360deg);
+  }
+  to {
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+
+@keyframes animateBrightness {
+  10% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(0.1);
+  }
+  90% {
+    filter: brightness(1);
+  }
+}
+
+.card-3d {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transform: perspective(800px);
+  animation: autoRun3d 20s linear infinite;
+  will-change: transform;
+}
+
+.card-3d div {
+  position: absolute;
+  width: 80px;
+  height: 112px;
+  background-color: rgb(199, 199, 199);
+  border: solid 2px lightgray;
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  animation: animateBrightness 20s linear infinite;
+  transition-duration: 200ms;
+  will-change: transform, filter;
+}
+
+.card-3d:hover {
+  animation-play-state: paused !important;
+}
+
+.card-3d:hover div {
+  animation-play-state: paused !important;
+}
+
+.card-3d div:nth-child(1) {
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(150px);
+  animation-delay: -0s;
+}
+
+.card-3d div:nth-child(2) {
+  transform: translate(-50%, -50%) rotateY(36deg) translateZ(150px);
+  animation-delay: -2s;
+}
+
+.card-3d div:nth-child(3) {
+  transform: translate(-50%, -50%) rotateY(72deg) translateZ(150px);
+  animation-delay: -4s;
+}
+
+.card-3d div:nth-child(4) {
+  transform: translate(-50%, -50%) rotateY(108deg) translateZ(150px);
+  animation-delay: -6s;
+}
+
+.card-3d div:nth-child(5) {
+  transform: translate(-50%, -50%) rotateY(144deg) translateZ(150px);
+  animation-delay: -8s;
+}
+
+.card-3d div:nth-child(6) {
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px);
+  animation-delay: -10s;
+}
+
+.card-3d div:nth-child(7) {
+  transform: translate(-50%, -50%) rotateY(216deg) translateZ(150px);
+  animation-delay: -12s;
+}
+
+.card-3d div:nth-child(8) {
+  transform: translate(-50%, -50%) rotateY(252deg) translateZ(150px);
+  animation-delay: -14s;
+}
+
+.card-3d div:nth-child(9) {
+  transform: translate(-50%, -50%) rotateY(288deg) translateZ(150px);
+  animation-delay: -16s;
+}
+
+.card-3d div:nth-child(10) {
+  transform: translate(-50%, -50%) rotateY(324deg) translateZ(150px);
+  animation-delay: -18s;
+}
+
+        /* From Uiverse.io by eslam-hany */ 
+.cardhead {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: mediumturquoise;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 5%;
+}
+
+.cardhead::before,
+.cardhead::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: lightblue;
+  transition: all 0.5s;
+}
+
+.cardhead::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%;
+}
+
+.cardhead::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100%  0 15px;
+}
+
+.cardhead:hover::before,
+.cardhead:hover:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+
+.cardhead:hover:after {
+  content: "Best Server";
+}
+        /* From Uiverse.io by jeremyssocial */ 
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: 6.2em;
+  } /* adjust width based on content */
+  90%,
+  100% {
+    width: 0;
+  }
+}
+
+.terminal-loader {
+  border: 0.1em solid #333;
+  background-color: #1a1a1a;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  padding: 1.5em 1em;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-left: 5%;
+  margin-right: 10%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.terminal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+  background-color: #333;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  padding: 0 0.4em;
+  box-sizing: border-box;
+}
+
+.terminal-controls {
+  float: right;
+}
+
+.control {
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-left: 0.4em;
+  border-radius: 50%;
+  background-color: #777;
+}
+
+.control.close {
+  background-color: #e33;
+}
+
+.control.minimize {
+  background-color: #ee0;
+}
+
+.control.maximize {
+  background-color: #0b0;
+}
+
+.terminal-title {
+  float: left;
+  line-height: 1.5em;
+  color: #eee;
+}
+
+
+
+#other {
+    padding: 1%;
+    border: solid;
+    border-radius: 15px;
+    border-color: #000;
+    margin: auto;
+}
+        /* From Uiverse.io by gharsh11032000 */ 
+.card {
+  max-width: 50%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+  line-height: 1.6;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 36px;
+  border-radius: 22px;
+  color: #ffffff;
+  overflow: hidden;
+  background: #ff0000;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+/* From Uiverse.io by MuhammadHasann */ 
+button {
+  position: relative;
+  padding: 12px 35px;
+  background: #fec195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+.content::before {
+  position: absolute;
+  content: "";
+  top: -4%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%);
+  background: #ced8ff;
+  z-index: -1;
+  transform-origin: bottom;
+
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content::after {
+  position: absolute;
+  content: "";
+  top: -8%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%);
+  background: #e7ecff;
+  z-index: -2;
+  transform-origin: bottom;
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content svg {
+  width: 48px;
+  height: 48px;
+}
+
+.content .para {
+  z-index: 1;
+  opacity: 1;
+  font-size: 18px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .link {
+  z-index: 1;
+  color: #fea000;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content .link:hover {
+  text-decoration: underline;
+}
+
+.card:hover {
+  transform: translate(0px, -16px);
+}
+
+.card:hover .content::before {
+  rotate: -8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .content::after {
+  rotate: 8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+        :root {
+            --mc-green: #72b626;
+            --mc-dark: #1a1a1a;
+            --mc-red: #942a21;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #313131;
+            font-family: 'Minecraft', sans-serif;
+            color: white;
+            
+        }
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  width: 120px;
+  height: 45px;
+  background-color: rgb(65, 64, 64);
+  border: none;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.342);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .5s;
+}
+
+.textip {
+  color: rgb(184, 236, 104);
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  z-index: 2;
+}
+
+.svgIcon {
+  z-index: 2;
+}
+
+.svgIcon path {
+  fill: rgb(184, 236, 104);
+}
+
+.Btn:hover {
+  color: rgb(230, 255, 193);
+}
+
+.effect {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(184, 236, 104);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition-duration: .5s;
+  
+}
+
+.Btn:hover .effect {
+  transform: scale(200);
+  transform-origin: center;
+  opacity: 1;
+  transition-duration: .5s;
+}
+
+.Btn:hover {
+  box-shadow: 0px 0px 5px rgb(184, 236, 104),
+  0px 0px 10px rgb(184, 236, 104),
+  0px 0px 30px rgb(184, 236, 104);
+  transition-duration: .7s;
+}
+
+.Btn:hover .text {
+  color: rgb(65, 64, 64);
+}
+
+.Btn:hover .svgIcon path {
+  fill: rgb(65, 64, 64);
+}
+
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            background: #252525;
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--mc-green);
+        }
+
+        .server-ip-box {
+            
+            margin-left: 5%;
+            margin-right: 10%;
+            width: 90%;
+            text-align: center;
+
+        }
+
+        .warning {
+            background: var(--mc-red);
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 10px solid #ff0000;
+            font-size: 1.2em;
+        }
+
+        .block-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 2px;
+            background: #464646;
+            padding: 2px;
+            border: 4px solid #2d2d2d;
+        }
+
+        .mine-block {
+            aspect-ratio: 1/1;
+            background: #1a1a1a;
+            border: 2px solid #000;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .mine-block img {
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+            object-fit: cover;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: var(--mc-green);
+            transition: width 0.1s linear;
+        }
+
+        .crack-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEhJREFUeNpi/P//PwMlgAWdwEQAJBIw4P8xGvH/GGHE1q1b/2MTZEQXYB0wYIC8gA4Eo8JgVBgMvjAAAgwADkQCCWMrB5QAAAAASUVORK5CYII=');
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .breaking .crack-overlay {
+            opacity: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            animation: particle 1s forwards;
+        }
+
+        @keyframes particle {
+            0% { transform: translate(0,0); opacity: 1; }
+            100% { transform: translate(var(--x), var(--y)); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+ <!-- From Uiverse.io by kennyotsu --> 
+<div class="headerr" style="margin-top: 5%;">
+  <div class="loader">
+    <p>SkyPower</p>
+    <div class="words">
+      <span class="word">Сервер</span>
+      <span class="word">Ванила</span>
+      <span class="word">Играй</span>
+      <span class="word">Путешествуй</span>
+      <span class="word">Изучай</span>
+    </div>
+  </div>
+</div>
+   
+
+        
+<!-- From Uiverse.io by eslam-hany --> 
+<div id="carouselExampleCaptions" class="carousel slide" style="width: 90%; margin-left: 5%; margin-bottom: 15%; margin-top: 15%;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="2025-03-15_15.44.10.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Sky Power</h5>
+        <p>Ванильный сервер, где можно просто насладиться игрой</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="2025-03-15_15.45.37.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Свобода действий</h5>
+        <p>Строй, разрушай, проходи игру</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="2025-03-16_14.55.20.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>skypower.mcmagic.space</h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="card">
+  <div class="content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+        </svg>
+      <path
+      d="M20 9V5H4V9H20ZM20 11H4V19H20V11ZM3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM5 12H8V17H5V12ZM5 6H7V8H5V6ZM9 6H11V8H9V6Z"
+      ></path>
+  </svg>
+  <p class="para">
+      ⚠ Внимание! Строительство запрещено ближе чем в 300 блоках от спавна! То что построете, будет снесено ⚠
+      Правила сервера SkyPower 
+
+1. Не грубить администрации и людем сервера <br>
+
+2. Запрещено воровство обман и кражи за это -бан <br>
+
+3. Запрещены баги и бага машины <br>
+
+3.1 за нахождение багов хороший подарок <br>
+
+4.запрещено ломать или воздействовать на постройки игроков.<br>
+
+5. Запрещены любые попытки взломов сервера<br>
+
+6. Запрещено подкупать админов или обманывать <br>
+
+7.не спамить в чате.<br>
+
+8.запрещена реклама других серверов<br>
+
+9. Запрещено дублировать аккауты и обход наказания<br>
+
+10. Убийство игроков без его разрешения <br>
+
+Нашли. Баг сообщите администрации <br>
+
+⚠️ Иначе бан или Мут
+  </p>
+  </div>
+</div>
+<div class="container" style="margin-left: 15%;">
+  <div class="row ">
+
+    <div class="col">
+      <button id="bottone1" style="margin-bottom: 5%; width: 100%;" onclick="copyIP()"><strong>Copy IP</strong></button>
+    </div>
+      <div class="col">  
+      <a href="https://skypower.easydonate.ru/"><button id="bottone1" style="margin-bottom: 5%; width: 100%;"><strong>Donate</strong></button></a>
+    </div>
+      <div class="col">
+      <a href="https://hotmc.ru/minecraft-server-276584"  style="margin-bottom: 5%; width: 100%;"><button style="margin-bottom: 5%; width: 100%;" id="bottone1" ><strong>HotMC</strong></button></a>
+    </div>
+      <div class="col">
+      <a href="https://t.me/SkyPowerMinecraft"><button id="bottone1" style="margin-bottom: 5%; width: 100%;" ><strong>Telegram  </strong></button></a>
+    </div>
+    
+    <div class="col">
+
+
+    </div>
+
+  </div>
+</div>
+
+   
+
+
+        <!-- From Uiverse.io by gharsh11032000 --> 
+
+
+  
+
+    </div>
+
+
+    </div>
+    <script>
+        const BLOCKS = [
+            { name: 'Трава', img: 'grass.jpg' },
+            { name: 'Земля', img: 'dirt.png' },
+            { name: 'Алмаз', img: 'diamond.png' }
+        ];
+
+        function createBlock() {
+            const block = document.createElement('div');
+            block.className = 'mine-block';
+            const randomBlock = BLOCKS[Math.floor(Math.random() * BLOCKS.length)];
+            
+            block.innerHTML = `
+                <img src="${randomBlock.img}" alt="${randomBlock.name}">
+                <div class="crack-overlay"></div>
+                <div class="progress-bar"></div>
+            `;
+
+            let breakProgress = 0;
+            let interval;
+
+            block.onmousedown = () => {
+                block.classList.add('breaking');
+                interval = setInterval(() => {
+                    breakProgress += 2;
+                    block.querySelector('.progress-bar').style.width = `${breakProgress}%`;
+                    if(breakProgress >= 100) {
+                        createParticles(block);
+                        block.remove();
+                        clearInterval(interval);
+                    }
+                }, 20);
+            };
+
+            block.onmouseup = block.onmouseleave = () => {
+                clearInterval(interval);
+                breakProgress = 0;
+                block.classList.remove('breaking');
+                block.querySelector('.progress-bar').style.width = '0%';
+            };
+
+            return block;
+        }
+
+        function createParticles(block) {
+            const rect = block.getBoundingClientRect();
+            for(let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = rect.left + rect.width/2 + 'px';
+                particle.style.top = rect.top + rect.height/2 + 'px';
+                particle.style.setProperty('--x', (Math.random() - 0.5) * 100 + 'px');
+                particle.style.setProperty('--y', (Math.random() - 0.5) * 100 + 'px');
+                document.body.appendChild(particle);
+                setTimeout(() => particle.remove(), 1000);
+            }
+        }
+
+        function generateGrid() {
+            const grid = document.getElementById('blockGrid');
+            const blocksCount = Math.floor(window.innerWidth / 80) * 8;
+            
+            for(let i = 0; i < blocksCount; i++) {
+                grid.appendChild(createBlock());
+            }
+        }
+
+        function copyIP() {
+            navigator.clipboard.writeText('skypower.mcmagic.space');
+            
+        }
+
+        window.onload = generateGrid;
+        window.onresize = generateGrid;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
